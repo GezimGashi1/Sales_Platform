@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Sales_Platform.View;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,10 +44,48 @@ namespace Sales_Platform.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            int sellerID;
+            if (!int.TryParse(txtSellerID.Text, out sellerID))
+            {
+                MessageBox.Show("Invalid Seller ID. Please enter a valid numeric ID.");
+                return;
+            }
 
+            string password = txtPassword.Password;
+
+            using (MySqlConnection connection = Connect.ConnectieSql())
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT Wachtwoord FROM account WHERE SellerID = @SellerID", connection);
+                cmd.Parameters.AddWithValue("@SellerID", sellerID);
+
+                object result = cmd.ExecuteScalar();
+                if (result == null)
+                {
+                    MessageBox.Show("Seller ID not found.");
+                }
+                if (result.ToString() == password)
+                {
+                    // Create an instance of MainWindow
+                    var mainWindow = new MainWindow();
+
+                    // Display MainWindow
+                    mainWindow.Show();
+
+                    // Close the current login window
+                    this.Close();
+                }
+
+
+
+                else
+                {
+                    MessageBox.Show("Incorrect password. Please try again.");
+                }
+            }
         }
 
-        private void txtSellerID_TextChanged(object sender, TextChangedEventArgs e)
+
+    private void txtSellerID_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
