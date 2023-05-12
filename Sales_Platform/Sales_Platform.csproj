@@ -31,6 +31,8 @@
 
   <ItemGroup>
     <PackageReference Include="BCrypt" Version="1.0.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.8" />
     <PackageReference Include="MySql.Data" Version="8.0.33" />
   </ItemGroup>
 

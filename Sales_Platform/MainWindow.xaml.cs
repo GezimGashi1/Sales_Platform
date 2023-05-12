@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows;
+using Sales_Platform.View;
 
 
 
@@ -37,9 +38,14 @@ namespace Sales_Platform
             InitializeComponent();
         }
 
+        // Assuming you're inside a button click event handler
         private void btnNieuwContract_Click(object sender, RoutedEventArgs e)
         {
-            
+            // Get the NavigationService for the current page
+            var navigationService = NavigationService.GetNavigationService(this);
+
+            // Navigate to the NieuwContract page
+            navigationService.Navigate(new NieuwContract());
         }
 
         private void btnNieuweSalesAgent_Click(object sender, RoutedEventArgs e)

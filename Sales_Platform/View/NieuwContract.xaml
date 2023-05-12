@@ -5,10 +5,331 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Sales_Platform.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="NieuwContract">
+      Title="NiewContract" Height="720" Width="1080" Background="White">
+     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="540"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+ 
+        <StackPanel Grid.Row="0" Background="YellowGreen"  Margin="0">
+            <TextBlock Text="Nieuw Contract" Foreground="White" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+            <Grid Margin="10">
+            </Grid>
+        </StackPanel>
 
-    <Grid>
-        
+
+        <StackPanel Grid.Row="1" Background="YellowGreen" Margin="0">
+
+            <StackPanel.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="Background" Value="#FF727272" />
+                    <Setter Property="Foreground" Value="white" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Margin" Value="5" />
+                    <Setter Property="Padding" Value="10" />
+                    <Setter Property="Height" Value="40" />
+                    <Setter Property="Width" Value="180" />
+                </Style>
+            </StackPanel.Resources>
+
+            <Grid Margin="10" Height="595" Width="500">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+
+                <TextBox x:Name="NaamTextBox" Grid.Row="0" Grid.Column="0"  Width="180" Margin="0,0,5,10" Padding="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Naam"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Naam"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <TextBox x:Name="AchternaamTextBox" Grid.Row="0" Grid.Column="1" Width="180" Margin="5,0,0,10" Padding="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Achternaam"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Achternaam"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <TextBox x:Name="TelefoonnummerTextBox" Grid.Row="1" Grid.Column="0" Width="180" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Telefoonnummer"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Telefoonnummer"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <ComboBox x:Name="GeslachtComboBox" Grid.Row="1" Grid.Column="1" Width="40" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <ComboBoxItem Content="Male"/>
+                    <ComboBoxItem Content="Female"/>
+                </ComboBox>
+
+                <TextBox x:Name="EmailTextBox" Grid.Row="2" Grid.Column="0" Width="180" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Email"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Email"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <ComboBox x:Name="ResProComboBox" Grid.Row="2" Grid.Column="1" Width="50" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <ComboBoxItem Content="Res"/>
+                    <ComboBoxItem Content="Pro"/>
+                </ComboBox>
+
+                <TextBox x:Name="GemeenteTextBox" Grid.Row="3" Grid.Column="0" Width="200" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Gemeente"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Gemeente"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <TextBox x:Name="PostTextBox" Grid.Row="3" Grid.Column="1" Width="140" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Post"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Post"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <TextBox x:Name="AddressTextBox" Grid.Row="4" Grid.Column="0" Width="180" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Address"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Address"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <TextBox x:Name="NrTextBox" Grid.Row="4" Grid.Column="1" Height="30" Width="45" Margin="5,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="Nr"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Nr"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <ComboBox x:Name="ContractComboBox" Grid.Row="5" Grid.Column="0" Width="220" Margin="5,5,5,5"
+                      ItemsSource="{Binding ContractOptions}"
+                      DisplayMemberPath="ContractName"
+                      SelectedValuePath="ContractId"
+                      SelectedValue="{Binding SelectedContractId}" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"> 
+                </ComboBox>
+                <CheckBox x:Name="DomicilieringCheckBox" Grid.Row="6" Grid.Column="0" Content="Domiciliering" Margin="5,5,5,5" HorizontalContentAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <CheckBox x:Name="EBillingCheckBox" Grid.Row="6" Grid.Column="1" Content="E-billing" Margin="5,5,5,5" HorizontalContentAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <CheckBox x:Name="GasCheckBox" Grid.Row="7" Grid.Column="0" Content="Gas" Margin="5,5,5,5" HorizontalContentAlignment="Left" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <CheckBox x:Name="ElectriciteitCheckBox" Grid.Row="7" Grid.Column="2" Content="Electriciteit" Margin="5,5,5,5" HorizontalContentAlignment="Left" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <TextBox x:Name="EANGasTextBox" Grid.Row="8" Grid.Column="0" Width="220" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="EAN - gas"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="EAN - gas"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                <TextBox x:Name="EANElectriciteitTextBox" Grid.Row="8" Grid.Column="1" Width="220" Margin="5,5,5,5" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="ToolTip" Value="EAN - Electriciteit"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="EAN - Electriciteit"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Text" Value=""/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </Grid>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Background="YellowGreen" Margin="0" Width="540" Height="100">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Toevoegen" Height="40" Width="100" Margin="10">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Green"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="40" CornerRadius="15" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Bijwerken" Height="40" Width="100" Margin="10">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Orange"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="OrangeRed"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="40" CornerRadius="15" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+                <Button Content="Verwijderen" Height="40" Width="100" Margin="10">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Red"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="PaleVioletRed"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="40" CornerRadius="15" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="Transparent" Margin="10">
+            <Label Content="Contract Information" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="0,10" />
+
+            <ListBox ItemsSource="{Binding Contracts}" Margin="10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="0,5">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding LastName}" />
+                            <TextBlock Text="{Binding PhoneNumber}" />
+                            <TextBlock Text="{Binding Gender}" />
+                            <TextBlock Text="{Binding Email}" />
+                            <TextBlock Text="{Binding ResidentialStatus}" />
+                            <TextBlock Text="{Binding Municipality}" />
+                            <TextBlock Text="{Binding PostalCode}" />
+                            <TextBlock Text="{Binding Address}" />
+                            <TextBlock Text="{Binding ContractType}" />
+                            <TextBlock Text="{Binding Domiciliation}" />
+                            <TextBlock Text="{Binding EBilling}" />
+                            <TextBlock Text="{Binding Gas}" />
+                            <TextBlock Text="{Binding Electricity}" />
+                            <TextBlock Text="{Binding EANGas}" />
+                            <TextBlock Text="{Binding EANElectricity}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 </Page>
